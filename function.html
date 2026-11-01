@@ -1,0 +1,549 @@
+<html>
+<head>
+<style>
+.sl{
+background:#282c34;
+color:#abb2bf;
+padding:10px;
+border-radius:6px;
+border-left:6px solid #0b5ed7;
+font-family:monospace;
+font-size:15px;
+}
+
+/*Heading formatting*/
+#c{
+font-size:30px;
+font-family:arial;
+margin-top:45px;
+}
+#n{
+font-size:25px;
+font-family:arial;
+}
+
+
+/*question formatting*/
+#question{
+font-size:17px;
+font-family:arial;
+margin-top:10px;
+margin-bottom:5px;
+}
+
+#back {
+text-decoration:none;
+color:black;
+}
+#back:hover{
+color:grey;
+}
+
+</style>
+</head>
+
+<header id="head">
+<a id="back" href="demo.html">Back to Home</a>
+<center id="c">FUNCTIONS</center><BR>
+<center id="n">9 programming challenges to help you master the fundamentals of C LANGUAGE.<BR>
+</CENTER>
+</HEADER>
+
+<body>
+<div id="question"><b>Queston 1<br></b>
+Write a program to enter 2 number from the users add them and display the answer, again enter 2 number from the user subtract them and display the answer, again enter 2 number from the user add them and display the answer, again enter 2 number from the user multiply them and display the answer, again enter 2 number from the user subtract them and display the answer, again enter 2 number from the user multiply them and display the answer, again enter 2 number from the user divide them and display the answer, again enter 2 number from the user divide them and display the answer, again enter 2 number from the user add them and display the answer ?
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include &ltstdio.h&gt
+int add()
+{ 
+    int num1,num2;
+    printf("Enter first number:");
+    scanf("%d",&num1);
+    printf("Enter second number:");
+    scanf("%d",&num2);
+    return num1+num2;
+}
+int sub()
+{
+    int num1,num2;
+    printf("Enter first number:");
+    scanf("%d",&num1);
+    printf("Enter second number:");
+    scanf("%d",&num2);
+    return num1-num2;
+}
+int multiply()
+{
+    int num1,num2;
+    printf("Enter first number:");
+    scanf("%d",&num1);
+    printf("Enter second number:");
+    scanf("%d",&num2);
+    return num1*num2;
+
+}
+float div()
+{
+    float num1,num2;
+    printf("Enter first number:");
+    scanf("%f",&num1);
+    printf("Enter second number:");
+    scanf("%f",&num2);
+    return num1/num2;
+}
+void main()
+{
+int addition,subtraction,multi;
+float division;
+addition=add();
+printf("Addition is %d\n",addition);
+subtraction=sub();
+printf("subtraction is %d\n",subtraction);
+addition=add();
+printf("addition is %d\n",addition);
+multi=multiply();
+printf("multiplication is %d\n",multi);
+subtraction=sub();
+printf("Subtraction is %d\n",subtraction);
+multi=multiply();
+printf("Multiplication is %d\n",multi);
+division=div();
+printf("Division is %f\n",division);
+division=div();
+printf("division is %f\n",division);
+multi=multiply();
+division=div();
+printf("division and multiplication is %f and %d respectively",division,multi);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+enter number to add: 2
+enter number to add:  2
+addition is 4
+enter number to subtract: 2
+enter number to subtract:  2
+subtractions is 0
+enter number to add: 2
+enter number to add:  2
+addition is 4
+enter number to multiply: 2
+enter number to mulitply:  2
+multiplication is 4
+enter number to subtract: 2
+enter number to subtract:  2
+subtractions is 0
+enter number to multiply: 2
+enter number to mulitply:  2
+multiplication is 4
+enter number to divide: 2
+enter number to divide:  2
+division is 1.000000
+enter number to divide: 2
+enter number to divide:  2
+division is 1.000000
+enter number to multiply: 2
+enter number to mulitply:  2
+enter number to divide: 2
+enter number to divide:  2
+division and multiplication is
+1.000000 and 4
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Queston 2<br></b>
+Write a program to enter 10 number from the user add the number and display the answer ?<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include &ltstdio.h&gt
+#include &ltconio.h&gt
+void enter()
+{
+    int i,sum=0,num;
+    for(i=1; i=10; i++)
+	{
+            printf("Enter %d number:",i);
+            scanf("%d",&num);
+            sum=sum+num;
+        }
+    printf("%d",sum);
+}
+void main()
+{
+    enter();
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+enter number: 1
+enter number: 2
+enter number: 3
+enter number: 4
+enter number: 5
+enter number: 6
+enter number: 7
+enter number: 8
+enter number: 9
+enter number: 10
+55
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Queston 3<br></b>
+Write a program to return an array from function ?
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+<pre>
+#include &ltstdio.h&gt
+#include &ltconio.h&gt
+char fun(int i)
+{
+char array[10];
+int x;
+for(x=0;x<=9;x++)
+{
+array[x]=x+1;
+}
+return array[i];
+}
+
+void main(){
+int i;
+char array[10];
+clrscr();
+for(i=0;i<=9;i++)
+{
+array[i]=fun(i);
+}
+for(i=0;i<=9;i++)
+{
+printf("Number %d: %d\n",i+1,array[i]);
+}
+}
+</pre>
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter size of array: 5
+Enter element: 1
+Enter element: 2
+Enter element: 3
+Enter element: 4
+Enter element: 5
+Array elements are: 1 2 3 4 5
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 4<br></b>
+Making following program using local and global variable ?
+Factorial , Reverse , Palindrome , Prime numbers, Armstrong , Fibonacci
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include &ltstdio.h&gt
+int num; 
+void factorial() 
+{
+	 int i,fact=1;
+	 printf("Enter a number:");
+	 scanf("%d", &num);
+         for(i=1;i<=num;i++)
+         {
+		fact=fact*i;
+	 }
+         printf("Factorial = %d\n", fact);
+}
+void reverse() 
+{
+        int num1,res=0,rem;
+        printf("Enter a number: ");
+        scanf("%d",&num1);
+        while(num1!=0)
+	{
+    	   rem=num1%10;
+    	   res=res*10+rem;
+           num1=num1/10;
+ 	}
+ printf("%d",res);
+ }
+
+
+void palindrome() 
+{
+    int num1,num2,rem,res=0;
+    printf("Enter a number:");
+    scanf("%d",&num);
+    num2=num1;
+while(num1>0)
+{
+  rem=num1%10;
+  res=res*10+rem;
+  num1=num1/10;
+}
+if(num2==num1)
+{
+  printf("Entered number is palindrome");
+}
+else if
+{
+  printf("Entered number is not palindrome");
+}
+}
+
+void prime() 
+{
+  int num1,x, fact=0; 
+  printf("Enter a number:");
+  scanf("%d",&num1);
+  if(num1>1)
+{
+  for(x=2; x<=num1/2; x++)
+ {
+        if(num1%x==0)
+	{
+            fact=0;
+	     break;
+	}
+    }
+    if(fact == 1)
+        printf("Entered number is a Prime Number");
+    else
+        printf("Entered number is not a Prime Number");
+}
+}
+
+void armstrong() {
+    int temp =n, sum =0, r; 
+    while(temp !=0) {
+        r = temp%10;
+        sum +=r*r*r;
+        temp/=10;
+    }
+    if(sum == n)
+        printf("Entered number is Armstrong");
+    else
+        printf("Enterred number is not armstrong");
+}
+void fibonacci() 
+{
+    int x=0,y=1,series,num1; 
+    printf("Enter last number for fabonacci series:");
+    scanf("%d",&num1);
+    printf("Fibonacci series: %d \n %d\n ", x, y);
+    while(x<=num1) 
+	{
+           series=x+y;
+           printf("%d ",series);
+           x=y;
+           y=series;
+         }
+     printf("\n");
+}
+
+void main() 
+{
+    clrscr();
+    enter();     
+    factorial();
+    reverse();
+    palindrome();
+    prime();
+    armstrong();
+    fibonacci();
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter number: 12
+Factorial = 479001600
+Reverse = 21
+Palindrome = No
+Prime = No
+Armstrong = No
+Fibonacci: 0 1 1 2 3 5 8 13 21 34 55 89 144
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 5</b><br>
+Swap numbers using Call by address ?
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include &ltstdio.h&gt
+void swap(int *x,int *y)
+{
+    int z;
+    z=*x;
+    *x=*y;
+    *y=z;
+}
+void print(int a,int b){
+    printf("Original Values:\na=%d \nb=%d \n ",a,b);
+}
+void main()
+{
+    int a,b;
+    clrscr();
+    a=20;
+    b=10;
+    print(a,b);
+    swap(&a,&b);
+    printf("Swapped values are \n");
+    printf("a= %d\n",a);
+    printf("b= %d\n",b);
+}
+ </pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+original value of 
+a=20
+b=10
+swaped values are
+a= 10
+b= 20
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Queston 6</b><br>
+Swap numbers using Call by function ?<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include &ltstdio.h&gt
+void swap(int a,int b)
+{
+    int z;
+    z=a;
+    a=b;
+    b=z;
+    printf("\nswapped values are:\n x=%d\ny=%d",a,b);
+}
+void main()
+{
+    int x,y;
+    clrscr();
+    x=10;
+    y=20;
+    printf("original values are:\nx=%d \ny=%d",x,y);
+    swap(x,y);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+original values are: 
+x=10
+y=20
+swapped values are:
+ x=20
+y=10
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Queston 7</b><br>
+Make function for find out power of number, enter the number and power from user ?<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include &ltstdio.h&gt
+int enter()
+{
+    int num;
+    printf("Enter a number:");
+    scanf("%d",&num);
+    return num;
+}
+int pwr()
+{
+    int y;
+    printf("Enter power:");
+    scanf("%d",&y);
+    return y;
+}
+void main(){
+int a,b,c=1;
+a=input();
+b=pwr();
+for(int n=1;n<=b;n++)
+{
+c=a*c;
+}
+printf("Power is %d",c);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter a number: 2
+Enter a power: 3
+Power is 8
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Queston 8</b><br>
+Make function for find out Cube a user entered number ?<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include &ltstdio.h&gt
+int enter()
+{
+    int num;
+    printf("Enter a number:");
+    scanf("%d",&num);
+    return num;
+}
+void cube(int a)
+{
+    int z;
+    z=(a*a)*a;
+    printf("cube is %d",z);
+}
+void main()
+{
+int a;
+a=input();
+cube(a);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter a number:4
+cube is:64
+</pre>
+</div>
+</body>
+</html>

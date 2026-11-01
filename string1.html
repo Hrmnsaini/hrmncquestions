@@ -1,0 +1,721 @@
+<html>
+<head>
+<style>
+.sl{
+background:#282c34;
+color:#abb2bf;
+padding:10px;
+border-radius:6px;
+border-left:6px solid #0b5ed7;
+font-family:monospace;
+font-size:15px;
+}
+
+/*Heading formatting*/
+#c{
+font-size:30px;
+font-family:arial;
+margin-top:45px;
+background-color:
+}
+#n{
+font-size:25px;
+font-family:arial;
+}
+
+/*question formatting*/
+#question{
+font-size:17px;
+font-family:arial;
+margin-top:10px;
+margin-bottom:5px;
+}
+
+#back {
+text-decoration:none;
+color:black;
+}
+#back:hover{
+color:grey;
+}
+</style>
+</head>
+<header id="head">
+<a id="back" href="demo.html">Back to Home</a>
+<center id="c">STRINGS</center><BR>
+<center id="n">18 programming challenges to help you master the fundamentals of C LANGUAGE</center><BR>
+</HEADER>
+<body>
+<div id="question"><b>Question 1</b><BR>
+Enter a string from user and convert in uppercase ?<BR><br>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt
+void main()
+{
+char str[50];
+int i;
+clrscr();
+printf("Enter a sentence: ");
+gets(str);
+for(i=0;str[i];i++)
+{
+if(str[i]>='a'&& str[i]<='z')
+{
+str[i]=str[i]-32;
+}
+}
+printf("Uppercase of it: %s",str);
+}
+</pre>
+</div><br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter a sentence:hello
+Uppercase of it:HELLO
+
+</pre>
+</div>
+
+<BR><BR>
+<div id="question"><b>Question 2</b><br>
+Enter a string from user and convert into lowercase ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int i;
+clrscr();
+printf("Enter a sentence: ");
+gets(str);
+for(i=0;str[i];i++)
+{
+if(str[i]>='A'&& str[i]<='Z')
+{
+str[i]=str[i]+32;
+}
+}
+printf("Lowercase of it: %s",str);
+}
+</pre>
+</div><br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter a sentence:HELLO HRMN
+Lowercase of it:hello hrmn
+
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 3</b><br>
+Enter a string from user and convert into sentence case ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int i;
+clrscr();
+printf("Enter a sentence: ");
+gets(str);
+if(str[0]>='a' && str[0]<='z')str[0]=str[0]-32;
+for(i=0;str[i];i++)
+{
+if(str[i-1]=='.' && str[i]>='a'&& str[i]<='z')
+{
+str[i]=str[i]-32;
+}
+}
+printf("The sentence case of it: %s",str);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter a sentence:HELLO HRMN
+The sentence case of it:Hello hrmn
+</pre>
+</div>
+
+
+
+<br><br>
+<div id="question"><b>Question 4</b><br>
+Enter a string from user and convert into title case ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int i;
+clrscr();
+printf("Enter any sentence you like: ");
+gets(str);
+if(str[0]>='a' && str[0]<='z')str[0]=str[0]-32;
+for(i=0;str[i];i++)
+{
+if( (str[i-1]==' ' && str[i]>='a'&& str[i]<='z')  || (str[i-1]=='.' && str[i]>='a'&& str[i]<='z')){
+str[i]=str[i]-32;
+}
+}
+printf("The title case of it: %s",str);
+}
+</pre>
+<b style="font-size:18;">Output:</b>
+<pre>
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 5</b><br>
+Enter a string from user and convert into toggle case ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int i,l;
+clrscr();
+printf("Enter any sentence you like: ");
+gets(str);
+l=strlen(str);
+for(i=0;i<l;i+=2){
+if((str[i]<='Z'&& str[i]>='A')|| (str[i]>='a' && str[i]<='z')){
+if (str[i]<='Z' && str[i]>='A')str[i]=str[i]+32;
+else if (str[i]<='z' && str[i]>='a')str[i]=str[i]-32;
+}
+if(i%3==0)i=i+2; // for randomness
+}
+puts(str);
+}
+</pre>
+<b style="font-size:18;">Output:</b>
+<pre>
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter a sentence:HELLO HRMN
+Lowercase of it:hello hrmn
+</pre>
+</div>
+
+
+<br><br>
+<div id="question"><b>Question 6</b><br>
+Enter a string from user and final length of the string ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+#include&ltstring.h&gt
+void main()
+{
+char str[50];
+int l;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+l=strlen(str);
+printf("The length of the entered string is: %d",l);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string:HELLO 
+The length of the entered string is:5
+</pre>
+</div>
+
+
+<!--<br><br>
+<div id="question"><b>Question 7</b><br>
+Enter a string from user and compare those string ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+}
+</pre>
+</div>-->
+
+<br><br>
+<div id="question"><b>Question 7</b><br>
+Enter a string from user and concatenate the string ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str1[50],str2[50];
+int l;
+clrscr();
+printf("Enter the string1: ");
+gets(str1);
+printf("Enter the string2: ");
+gets(str2);
+strcat(str1,str2);
+printf("Your final string is %s",str1);
+}
+</pre>
+</div>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter string1:hello
+Enter string2:students
+your final string:hello students
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 8</b><br>
+Enter a string from user and copy that string into another string ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+#include&ltstring.h&gt
+void main()
+{
+char str1[50],str2[50];
+int l;
+clrscr();
+printf("Enter the string: ");
+gets(str1);
+strcpy(str2,str1);
+printf("copied string:  %s",str2);
+}
+</pre>
+</div>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string:hi hrmn
+Copied string:hi hrmn
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 9</b><br>
+Enter the string from user ,enter a number from user ,if the user enter 0 then you will print first character of string ,if the user enter 1 then you will print second character of string ,if user enter 2 then you will print third character of string ,if user enter 3 then you point fourth character of string and if out of string then you will print out of bound ?<br>
+</div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int l,d;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+l=strlen(str);
+printf("which character you want you print(index): ");
+scanf("%d",&d);
+if (d<0) printf("Please enter a number greater than or equal to 0 only");
+else if(d<l)printf("%c",str[d]);
+else printf("Out of bound");
+}
+</pre>
+</div>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string:hi
+which character you want to print(index):0
+h
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 10</b><br>
+Enter the string from user and print each character in new line ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int i;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+printf("Each character in new line:\n");
+for(i=0;str[i];i++)
+{
+printf("%c\n",str[i]);
+}
+}
+</pre>
+</div>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string:hi
+Each character in new line:
+h
+i
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 11</b><br>
+Enter the string from user and copy reverse order into another string ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str1[50],str2[50];
+int i,l;
+clrscr();
+printf("Enter the string: ");
+gets(str1);
+l=strlen(str1);
+for(i=0;str1[i];i++)
+{
+str2[i]=str1[l-1-i];
+}
+str2[i]=0;
+printf("Entered string in reverese order: %s",str2);
+}
+</pre>
+</div><br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string:hello
+Entered string in reverse order:
+o
+l
+l
+e
+h
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 12</b><br>
+Enter two string from user and print difference each character ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt  
+#include&ltconio.h&gt 
+void main()
+{
+char str1[50],str2[50];
+int l1,l2,i,l;
+clrscr();
+printf("Enter the first string: ");
+gets(str1);
+l1=strlen(str1);
+printf("Enter the Second string: ");
+gets(str2);
+l2=strlen(str2);
+if(l1>l2)
+l=l2;
+else if(l1<l2) 
+l=l1;
+else 
+l=l1;
+printf("The difference in each character:\n");
+for(i=0;i<l;i++)
+{
+printf("%d %d\n",i+1,str1[i]-str2[i]);
+}
+if(l1>l2)
+{
+for(i=l;i<l1;i++)
+{
+printf("%d %d\n",i+1,str1[i]);
+}
+}
+else if(l1<l2)
+{
+ for(i=l;i<l2;i++)
+ {
+ printf("%d %d\n",i+1,str2[i]);
+ }
+}
+
+}
+</pre>
+</div><br>
+<div class="sl">
+<b style="font-size:18;">Output</b>
+<pre>
+Enter first string: hello
+Enter second string: bye
+6 -20 7
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 13</b><br>
+Enter the string from user and enter a character , it is exist or not ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50],c;
+int i;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+printf("Enter the character: ");
+scanf("%c",&c);
+for(i=0;str[i];i++)
+{
+if(str[i]==c)
+{
+printf("Your string contains this character."); goto jump; }
+}
+printf("Your string does not contain this character.");
+jump:
+}
+</pre>
+</div><br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string: hrmn
+Enter the character:n
+Your string contains this character 
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 14</b><br>
+Enter the string from user and enter a character if it is exist then print the bound number ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50],c;
+int i;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+printf("Enter the character: ");
+scanf("%c",&c);
+for(i=0;str[i];i++)
+{
+if(str[i]==c)
+{
+printf("Your string do have this character at bound number: %d",i);
+goto jump; 
+}
+}
+printf("Your string does not have this character.");
+jump:
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string: hrmn
+Enter the character:n
+Your string contains this character 
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 15</b><br>
+Enter the string from user and count all vowels ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int i,v=0;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+for(i=0;str[i];i++)
+{
+if((str[i]=='a')||(str[i]=='e')||(str[i]=='i')||(str[i]=='o')||(str[i]=='u')||(str[i]=='A')||(str[i]=='E')||(str[i]=='I')||(str[i]=='O')||(str[i]=='U'))
+v+=1;
+}
+printf("Total number of vowels in string: %d",v);
+}
+</pre>
+<div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string: hi
+Total number of vowels in string:1
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 16</b><br>
+Enter the string from user and enter bound number and print character on that bound ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str[50];
+int i,b=0;
+clrscr();
+printf("Enter the string: ");
+gets(str);
+printf("Enter the bound number: ");
+scanf("%d",&b);
+printf("The character on the bound is : %c",str[b]);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter the string: hrmn
+Enter the bound number:1
+The character on the bound is:r 
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 17</b><br>
+String palindrome example (using reverse) ?<br></div>
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char str1[50],str2[50];
+int i,l;
+clrscr();
+printf("Pallindrome are words that spells the same forward and backward for example \nNITIN,NAMAN and MOM\n");
+printf("Enter any word to check if it is a pallindrome: ");
+gets(str1);
+l=strlen(str1);
+for(i=0;str1[i];i++){
+str2[i]=str1[l-1-i];
+}
+str2[i]=0;
+l=strcmp(str1,str2);
+if(l==0)printf("Entered string is a pallindrome");
+else printf("Entered string is not a pallindrome");
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter any word to check if it is a pallidrome:mom
+Entered string is pallindrome
+</pre>
+</div>
+
+<br><br>
+<div id="question"><b>Question 18</b><br>
+Enter the data from user the data consist of roll no. ,name ,class , marks of 5 subjects ?<br></div>
+
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<pre>
+#include&ltstdio.h&gt 
+#include&ltconio.h&gt 
+void main()
+{
+char name[25],roll[7],clas[7],mark[5][2];
+clrscr();
+printf("Enter all the details below\n");
+printf("Enter your name: ");
+gets(name);
+printf("Enter the roll number: ");
+gets(roll);
+printf("Enter the marks of these 5 subject:\n");
+printf("English: ");
+gets(mark[0]);
+printf("Physics: ");
+gets(mark[1]);
+printf("Chemistry: ");
+gets(mark[2]);
+printf("Maths: ");
+gets(mark[3]);
+printf("Information Technology: ");
+gets(mark[4]);
+printf("Press any key to submit");
+}
+</pre>
+</div>
+
+<br>
+<div class="sl">
+<b style="font-size:18;">Output:</b>
+<pre>
+Enter all the deatils below
+Enter your name:harman
+Enter your roll no:4123/26
+Enter the marks of these 5 subjects:
+English:96
+Physics:89
+Chemistry:86
+Maths:90
+Information Technology:98
+Press any key to submit
+</pre>
+</div>
+</body>
+</html>
