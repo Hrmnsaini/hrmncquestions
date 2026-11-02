@@ -1,0 +1,120 @@
+
+<html>
+<head>
+<style>
+/*big block wala div*/
+a:hover{
+color:#0047AB;
+font-size:24px;
+}
+.sl{
+background:#282c34;
+color:#abb2bf;
+padding:10px;
+border-radius:6px;
+border-left:6px solid #0b5ed7;
+font-family:monospace;
+font-size:15px;
+}
+
+/*Heading formatting*/
+#c{
+font-size:30px;
+font-family:arial;
+margin:2px 2px;
+color:#0047AB;
+}
+#n{
+font-size:25px;
+font-family:arial;
+color:#0047AB;
+}
+
+
+/*question formatting*/
+#question{
+font-size:17px;
+font-family:arial;
+margin-top:10px;
+margin-bottom:5px;
+}
+#back {
+text-decoration:none;
+color:black;
+}
+
+#main
+{
+display:block;
+border:3px solid white;
+border-radius:10px;
+margin:4px 20px;
+justify-content:space-between;
+background-color:white;
+padding:5px 2px;
+}
+
+#heading{
+Background-color:white;
+border-radius:5px;
+margin:4px 20;
+padding:5px 2px;
+}
+</style>
+</head>
+<body style="background-color:#DCEEFF;">
+<header id="head">
+<a id="back" href="index.html">Back to home</a><br><br>
+
+</HEADER>
+<div id="heading">
+<br>
+<CENTER id="c">ITERATIVE NESTED LOOPS</center<br>
+<center id="n"> 1 programming challenges to help you master the fundamentals of C LANGUAGE
+</CENTER><br>
+</div>
+<br>
+<br>
+
+<div id="main">
+<div id="question">
+<b>Question 1</b><br>
+Write a program to print the pattern on the screen i.e.?<br>
+1111<br>
+1111<br>
+1111<br><br></div>
+
+<b style="font-size:18;">Solution</b><br>
+<div class="sl">
+<PRE>
+#include&ltstdio.h&gt
+#include&ltconio.h&gt
+#include&ltdos.h&gt
+void main()
+{
+int i,j;
+clrscr();
+for(i=1;i<=3;i++)
+{
+//printf("1");
+for(j=0;j<4;j++)
+{
+printf("1");
+}
+printf("\n") ;
+}
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b style:"font-size:18;">Output:</b>
+<pre>
+1111
+1111
+1111
+</pre>
+</div>
+</div>
+</body>
+</html>
