@@ -1,1 +1,180 @@
-no questons
+<html>
+<head><title>C</title>
+<style>
+/*soultion formatting*/
+/*big block wala div*/
+a:hover{
+color:#0047AB;
+font-size:24px;
+}
+.sl{
+background:#282c34;
+color:#abb2bf;
+padding:10px;
+border-radius:6px;
+border-left:6px solid #0b5ed7;
+font-family:monospace;
+font-size:15px;
+}
+
+/*Heading formatting*/
+#c{
+font-size:30px;
+font-family:arial;
+margin:2px 2px;
+color:#0047AB;
+}
+#n{
+font-size:25px;
+font-family:arial;
+color:#0047AB;
+}
+
+
+/*question formatting*/
+#question{
+font-size:17px;
+font-family:arial;
+margin-top:10px;
+margin-bottom:5px;
+}
+#back {
+text-decoration:none;
+color:black;
+}
+
+#main
+{
+display:block;
+border:3px solid white;
+border-radius:10px;
+margin:4px 20px;
+justify-content:space-between;
+background-color:white;
+padding:5px 2px;
+}
+
+#heading{
+Background-color:white;
+border-radius:5px;
+margin:4px 20;
+padding:5px 2px;
+}
+</style>
+</head>
+<body style="background-color:#DCEEFF;">
+<header id="head">
+<a id="back" href="index.html">Back to home</a><br><br>
+
+</HEADER>
+<div id="heading">
+<br>
+<CENTER id="c">POINTERS</CENTER><BR>
+<center id="n">2 Programming challenges to help you master the fundamentals of C LANGUAGE
+</CENTER><br>
+</div>
+<br>
+<br>
+
+<div id="main"><div id="question">
+<b>Question 1</b><br>
+A pointer should point the array and through pointer we will fill all the location of the array by asking the claue from user and print the array.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+void main()
+{
+int arr[10], *ptr, i;
+clrscr();
+for(i=0; i<10; i++)
+{
+ptr=&arr[i];
+printf("Enter the value of arr[%d]:", i);
+scanf("%d", ptr);
+}
+printf("Values of Array:\n");
+for(i=0; i<10; i++)
+{
+printf("%d\n",arr[i]);
+}
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+Output:
+<pre>
+(scanf part)
+Enter the value of arr[0]:12
+Enter the value of arr[1]:4
+Enter the value of arr[2]:6
+Enter the value of arr[3]:89
+Enter the value of arr[4]:2
+Enter the value of arr[5]:2
+Enter the value of arr[6]:65
+Enter the value of arr[7]:21
+Enter the value of arr[8]:3
+Enter the value of arr[9]:68
+(printf part)
+values of array:
+12
+4
+6
+89
+2
+2
+65
+21
+3
+68
+</pre>
+</div>
+</div></div>
+
+
+<div id="main"><div id="question">
+<b>Question 2</b><br>
+Write a program in which we are hacing 2-D array of 2*3 insert he values through pointers and print the values.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int arr[2][2],i,j,*ptr;
+for(i=0;i<2;i++)
+{
+for(j=0;j<2;j++)
+{
+ptr=&arr[i][j];
+printf("\nenter the value index %d %d:",i,j);
+scanf("%d",ptr);
+printf("%d",*ptr);
+}
+}
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+Output:
+<pre>
+(scanf part)
+Enter the value index 00:4
+Enter the value index 01:1
+Enter the value index 10:7
+Enter the value index 11:0
+(printf part)
+4
+1
+7
+0
+</pre>
+</div>
+</div></div>
+</body>
+</html>

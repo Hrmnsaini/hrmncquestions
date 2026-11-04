@@ -1,0 +1,483 @@
+<html>
+<head>
+<style>
+/*big block wala div*/
+a:hover{
+color:#0047AB;
+font-size:24px;
+}
+.sl{
+background:#282c34;
+color:#abb2bf;
+padding:10px;
+border-radius:6px;
+border-left:6px solid #0b5ed7;
+font-family:monospace;
+font-size:15px;
+}
+
+/*Heading formatting*/
+#c{
+font-size:30px;
+font-family:arial;
+margin:2px 2px;
+color:#0047AB;
+}
+#n{
+font-size:25px;
+font-family:arial;
+color:#0047AB;
+}
+
+
+/*question formatting*/
+#question{
+font-size:17px;
+font-family:arial;
+margin-top:10px;
+margin-bottom:5px;
+}
+#back {
+text-decoration:none;
+color:black;
+}
+
+#main
+{
+display:block;
+border:3px solid white;
+border-radius:10px;
+margin:4px 20px;
+justify-content:space-between;
+background-color:white;
+padding:5px 2px;
+}
+
+#heading{
+Background-color:white;
+border-radius:5px;
+margin:4px 20;
+padding:5px 2px;
+}
+</style>
+</head>
+<body style="background-color:#DCEEFF;">
+<header id="head">
+<a id="back" href="index.html">Back to home</a><br><br>
+
+</HEADER>
+<div id="heading">
+<br>
+<CENTER id="c">FILE HANDLING</center><BR>
+<center id="n">6 Programming challenges to help you master the fundamentals of C LANGUAGE
+</CENTER><br>
+</div>
+<br>
+<br>
+
+<div id="main"><div id="question">
+<b>Question 1</b><br>
+Enter a file name from the user and the data from the user and put it in the file.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+FILE * f;
+char name[10],data[20];
+clrscr();
+printf("Enter file name:");
+gets(name);
+fflush(stdin);
+f=fopen(&name,"w");
+if(f==null)
+printf("file not created");
+printf("\nEnter the data:");
+gets(data);
+fputs(data,f);
+fclose(f);
+}
+
+</pre>
+</div>
+<br>
+<div class="sl">
+<b>Output:</b>
+<pre>
+Enter file name:Hrmn
+Enter the data:Today i made my first c program.
+</pre>
+</div><br>
+<div class="sl">
+<pre>
+<b>File content:</b>
+(Hrmn)
+Today i made my first c program.
+</pre>
+</div>
+</div></div>
+<br><br>
+
+<div id="main"><div id="question">
+<b>Question 2</b><br>
+
+Enter the file name from the user and the data from the user till the user wants to enter and  put in the file.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+FILE *f;
+char name[20],data[30];
+char ch;
+printf("enter file name:");
+gets(name);
+f=fopen(name,"w");
+if(f==NULL)
+{
+printf("file not created");
+}
+do
+{
+printf("enter the data:");
+gets(data);
+fflush(stdin);
+fprintf(f,"%s",data);
+printf("\n Do you want to enter more data y/n:");
+scanf("%c",&ch);
+fflush(stdin);
+}
+while(ch=='y'||ch=='Y');
+fclose(f);
+}
+
+</pre>
+</div>
+<br>
+<div class="sl">
+<b>Output:</b>
+<pre>
+Enter file name:Hrmn
+Enter the data:Today i made my first c program.(enter)
+Do you enter more data
+y
+now i made my second file handling program.
+Do you enter more data
+n
+</pre>
+</div><br>
+<div class="sl">
+<pre>
+<b>File content:</b>
+(Hrmn)
+Today i made my first c program.
+now i made my second file handling program.
+</pre>
+</div>
+</div></div>
+<br><br>
+
+<div id="main"><div id="question">
+<b>Question 3</b><br>
+Enter the file name from the user and the data from the user and put in the file but should be in capital letters.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+FILE *f;
+char name[30], data[25];
+char ch;
+int i=1;
+clrscr();
+printf("enter file name:");
+gets(name);
+fflush(stdin);
+f=fopen(name,"w");
+if(f==NULL)
+printf("file is not created");
+printf("enter the data:");
+gets(data);
+while(data !='\0')
+{
+if(data[i] >=97 && data[i]<=122)
+{
+data[i]=data[i]-32;
+}
+fputc(data[i],f);
+i++;
+}
+fclose(f);
+}
+
+</prE>
+</div>
+<br>
+<div class="sl">
+<b>Output:</b>
+<pre>
+Enter file name:file 1
+Enter the data:Harman
+</pre>
+</div><br>
+<div class="sl">
+<pre>
+<b>File content:</b>
+(file 1)
+HARMAN
+</pre>
+</div>
+</div></div>
+<br><br>
+
+
+
+<div id="main"><div id="question">
+<b>Question 4</b><br>
+Enter the 2 files from the user and concatinate into another file.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+#include<conio.h>
+void main(){
+FILE *f1,*f2,*f3;
+char name[10], name2[10], name3[10] ,data[50],data2[50],a, *c;
+printf("Enter the file name:");
+gets(name);
+fflush(stdin);
+printf("Press Ctrl+S to save the file \n Press enter to insert more data");
+f1=fopen(name,"w");
+if(f1==NULL)
+printf("File is not created");
+else
+{
+do
+{
+gets(data);
+fprintf(f1,"%s",data);
+a=getch();
+}while(a!=19);
+printf("File saved");
+fclose(f1);  
+ }
+printf("Enter second file name:");
+gets(name2);
+fflush(stdin);
+printf("Press Ctrl+S to save the file \n Press enter to insert more data");
+f2=fopen(name2,"w");
+if(f2==NULL)
+printf("File is not created");
+else
+{
+do
+{
+gets(data2);
+fprintf(f2,"%s",data2);
+a=getch();
+}while(a!=19);
+printf("File saved");
+fclose(f2);
+
+f1=fopen(name,"r");
+f2=fopen(name2,"r");
+printf("Enter third file name:");
+gets(name3);
+f3=fopen(name3,"w");
+
+do{
+c=fgets(data,50,f1);
+if(c!=0)
+fprintf(f3,"%s",data);
+}while(c!=0);
+do
+{
+c=fgets(data2,50,f2);
+if(c!=0)
+fprintf(f3,"%s",data2);
+}while(c!=0);
+fclose(f3);
+fclose(f2);
+fclose(f1);
+printf("Files are concatinated successfully");
+}
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b>Output:</b>
+<pre>
+Enter file name:file 1
+Press Ctrl+S to save the file \n Press enter to insert more data
+Enter the data:Harman
+Enter second file name:file 2
+Press Ctrl+S to save the file \n Press enter to insert more data
+Enter the data:rani
+Enter third file name:file 3
+Harman rani
+</pre>
+</div></div>
+<br><br>
+
+
+<div id="main"><div id="question">
+<b>Question 5</b><br>
+Create a file and count the number of character in that file.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+FILE *f;
+char name[20], data[50],ch;
+int x,count=0;
+clrscr();
+printf("Enter file name:");
+gets(name);
+fflush(stdin);
+printf("Press Ctrl+S to save the file \n Press enter to insert more data");
+f=fopen(name,"w");
+if(f==NULL)
+printf("File is not created");
+else
+{
+do
+{
+gets(data);
+fprintf(f,"%s",data);
+ch=getch();
+}while(ch!=19);
+printf("File saved");
+fclose(f);
+
+f=fopen(name,"r");
+do
+{
+x=fgetc(f);
+if(x!=-1)
+count++;
+}while(x!=-1);
+fclose(f);
+printf("number of characters in file= %d",count);
+}
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b>Output:</b>
+<pre>
+Enter file name:file 1
+Press Ctrl+S to save the file \n Press enter to insert more data
+Enter the data:Harman
+number of characters in file= 6
+</pre>
+</div></div>
+<br><br>
+
+<div id="main"><div id="question">
+<b>Question 6</b><br>
+Create a file and count the number of words in that file.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+FILE *f;
+char name[20], data[50],*x,ch;
+int y,count=1;
+clrscr();
+printf("Enter file name:");
+gets(name);
+fflush(stdin);
+printf("Press Ctrl+S to save the file \n Press enter to insert more data");
+f=fopen(name,"w");
+if(f==NULL)
+printf("File is not created");
+else
+{
+do
+{
+gets(data);
+fprintf(f,"%s",data);
+ch=getch();
+}while(ch!=19);
+printf("File saved");
+fclose(f);
+
+f=fopen(name,"r");
+do
+{
+x=fgets(data,100,f);
+if(x!=0)
+{
+for(y=0; data[y]!='\0'; y++)
+{
+if(data[y]==','||data[y]==' ')
+{
+count++;
+y++;
+}
+}
+}
+}
+while(x!=0);
+fclose(f);
+printf("Number of words=%d", count);
+}
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+<b>Output:</b>
+<pre>
+Enter file name:file 1
+Press Ctrl+S to save the file \n Press enter to insert more data
+Enter the data:Harman rani
+number of characters in file= 2
+</pre>
+</div></div>
+<br><br>
+
+
+<!--<div id="main"><div id="question">
+<b>Question 7</b><br>
+Enter the file name from the user and the data from the user and rename that file but rename should be by the user.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+</pre>
+</div>
+
+<div id="main"><div id="question">
+<b>Question 8</b><br>
+Enter the file name from the user and the data from the user and copy that file into another file.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+</pre>
+</div>
+-->
+
+
+

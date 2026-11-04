@@ -1,0 +1,200 @@
+<html>
+<head>
+<style>
+/*big block wala div*/
+a:hover{
+color:#0047AB;
+font-size:24px;
+}
+.sl{
+background:#282c34;
+color:#abb2bf;
+padding:10px;
+border-radius:6px;
+border-left:6px solid #0b5ed7;
+font-family:monospace;
+font-size:15px;
+}
+
+/*Heading formatting*/
+#c{
+font-size:30px;
+font-family:arial;
+margin:2px 2px;
+color:#0047AB;
+}
+#n{
+font-size:25px;
+font-family:arial;
+color:#0047AB;
+}
+
+
+/*question formatting*/
+#question{
+font-size:17px;
+font-family:arial;
+margin-top:10px;
+margin-bottom:5px;
+}
+#back {
+text-decoration:none;
+color:black;
+}
+
+#main
+{
+display:block;
+border:3px solid white;
+border-radius:10px;
+margin:4px 20px;
+justify-content:space-between;
+background-color:white;
+padding:5px 2px;
+}
+
+#heading{
+Background-color:white;
+border-radius:5px;
+margin:4px 20;
+padding:5px 2px;
+}
+</style>
+</head>
+<body style="background-color:#DCEEFF;">
+<header id="head">
+<a id="back" href="index.html">Back to home</a><br><br>
+
+</HEADER>
+<div id="heading">
+<br>
+<CENTER id="c">RECURSION</center><BR>
+<center id="n">3 programming challenges to help you master the fundamentals of C LANGUAGE.<BR>
+</CENTER>
+<br>
+</div>
+<br>
+<br>
+
+<div id="main">
+<div id="question"><b>Queston 1<br></b>
+Write a program of recursion and show the output.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+int i=1;
+void display()
+{
+if(i<=5)
+{i++;
+display();
+printf("%d\n",i);
+}
+printf("a\n");}
+void main()
+{
+clrscr();
+display();
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+Output:
+<pre>
+1
+2
+3
+4
+5
+a
+a
+a
+a
+a
+a
+</pre>
+</div></div>
+
+	
+	<br><br>
+
+<div id="main">
+<div id="question"><b>Queston 2<br></b>
+Write a program of  recursion using global variable and display the output.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+int i=1;
+void display()
+{
+if(i<=5)
+{i++;
+display();
+printf("%d\n",i);
+}
+}
+void main()     
+{
+clrscr();
+display();
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+Output:
+<pre>
+6
+6
+6
+6
+6
+</pre>
+</div></div>
+
+	
+	<br><br>
+
+<div id="main">
+<div id="question"><b>Queston 3<br></b>
+Write a program of recursion with local variable and display the output.
+<br><br>
+<b>Solution</b><br>
+<div class="sl">
+<pre>
+#include<stdio.h>
+void display(int i)
+{
+if(i<=5)
+{i++;
+display(i);
+printf("%d\n",i);
+}
+void main()
+{
+clrscr();
+display(1);
+}
+</pre>
+</div>
+<br>
+<div class="sl">
+Output:
+<pre>
+6
+5
+4
+3
+2
+</pre>
+</div></div>
+
+	
+	<br><br>
+</body>
+</html>
